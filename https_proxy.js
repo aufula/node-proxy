@@ -21,7 +21,7 @@
 */
 
 var sys = require('sys'),
-    tcp = require('tcp'),
+    tcp = require('net'),
     dns = require('dns');
 
 var STATES = {
@@ -90,6 +90,5 @@ var server = tcp.createServer(function (socket) {
   });
 });
 
-server.listen(8001, "localhost");
-
-sys.puts('Server running at http://127.0.0.1:8001/');
+server.listen(8087,'0.0.0.0');
+sys.puts('HTTPS Proxy Server running at http://0.0.0.0:8087');
